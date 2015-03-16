@@ -1,0 +1,17 @@
+{
+ "schedule": "R\/{{DATE}}\/PT2M",
+ "name": "run-crankins",
+ "container": {
+  "type": "DOCKER",
+  "image": "192.168.59.103:5000/crankins",
+  "network": "BRIDGE"
+ },
+ "cpus": "0.5",
+ "mem": "512",
+ "uris": [],
+ "shell": false,
+ "command": "/usr/bin/puppet apply /etc/puppet/manifests",
+ "parents": [
+     "build-crankins"
+ ]
+}
